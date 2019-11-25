@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Protex">
+<meta name="author" content="Juan Flores-Moroco">
+
+<title>Log in</title>
+
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+<link rel="stylesheet" th:href="@{/css/solid.min.css}">
+<link rel="stylesheet" th:href="@{/css/signin.css}">
+
+
+<link rel="stylesheet" th:href="@{/vendor/animate/animate.css}">
+<link rel="stylesheet" th:href="@{/vendor/animate/css/animsition.min.css}">
+<link rel="stylesheet" th:href="@{/vendor/select2/select2.min.css}">
+<link rel="stylesheet" th:href="@{/vendor/daterangepicker/daterangepicker.css}">
+<link rel="stylesheet" th:href="@{/css/util.css}">
+<link rel="stylesheet" th:href="@{/css/main.css}">
+
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-login100 text-center">
+			<div class="wrap-login100">
+			<form th:action="@{/signin}" class="form-signin" method="post">
+			<img class="mb-4" th:src="@{/images/logoTienda.jpg}" width="300px" height="100px" alt="logo" >
+			<h1 class="h3 mb-3 font-weight-normal"><i class="fas fa-user-circle"></i> Sign In</h1>
+
+			<div th:if="${param.error}" class="alert alert-danger">
+				Usuario y Contraseña invalidos
+			</div>
+			<div th:if="${param.logout}" class="alert alert-success">
+				Haz salido de forma correcta
+			</div>
+
+			<div class="input-group mb-3">
+  				<div class="input-group-prepend">
+    				<span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+  				</div>
+  				<input type="text" id="inputUsername" name="inputUsername" class="form-control" placeholder="Usuarios" 
+  					aria-describedby="basic-addon1" required autofocus>
+			</div>
+			<div class="input-group mb-3">
+  				<div class="input-group-prepend">
+    				<span class="input-group-text" id="basic-addon2"><i class="fas fa-lock"></i></span>
+  				</div>
+  				<input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="Contraseña" 
+  					aria-describedby="basic-addon2" required>
+			</div>			
+			
+			<div class="checkbox mb-3 text-left">
+				<label> <input type="checkbox" id="checkRememberMe" name="checkRememberMe">
+					Recordar usuario
+				</label>
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Login</button>
+			<p class="mt-5 mb-3 text-muted">Pandarius 2019</p>
+		</form>
+
+				<div class="login100-more" style="background-image: url('images/bg-01.jpg');"></div>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	<div id="dropDownSelect1"></div>
+	<footer>
+		<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+		<script th:src="@{/js/fontawesome.min.js}"></script>
+		<script th:src="@{/vendor/animsition/js/animsition.min.js}"></script>
+		<script th:src="@{/vendor/bootstrap/js/popper.js}"></script>
+		<script th:src="@{/vendor/bootstrap/js/bootstrap.min.js}"></script>
+		<script th:src="@{/vendor/select2/select2.min.js}"></script>
+		<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+		</script>
+		<script th:src="@{/vendor/daterangepicker/moment.min.js}"></script>
+		<script th:src="@{/vendor/daterangepicker/daterangepicker.js}"></script>
+		<script th:src="@{/vendor/countdowntime/countdowntime.js}"></script>
+		<script th:src="@{/js/main.js}"></script>
+		
+	
+	
+	</footer>
+</body>
+</html>

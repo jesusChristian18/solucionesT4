@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+ <link rel="stylesheet" type="text/css" href="static/css/inicio.css" th:href="@{/css/inicio.css}">
+<head th:replace="layout/layout :: head"></head>
+
+<body>
+<header th:replace="layout/layout :: header"></header>
+
+	<div class="container cabecera ">
+		<h1>Lista de Clientes</h1>
+
+		<div class="card text-center">
+			<div class="card-header ">Lista de 	Clientes</div>
+			<div class="card-body body-color">
+
+				<div th:if="${dangerDel}" class="alert alert-danger" role="alert">
+  					<span th:text="${dangerDel}"></span>
+				</div>
+				
+
+				<table class="table table-bordered">
+                <thead class="thead-dark">
+						<tr>
+						    <th scope="col">ID</th>
+							<th scope="col">Apellidos</th>
+							<th scope="col">Nombres</th>
+					
+						
+						
+						</tr>
+					</thead>
+					<tbody th:each="usuario: ${usuarios}">
+						<tr>
+							<td th:text="${usuario.id}">@mdo</td>
+							<td th:text="${usuario.apellidos}">@mdo</td>
+							<td th:text="${usuario.nombres}">Otto</td>
+							
+							
+					</tr>
+					
+					
+					</tbody>
+				</table>
+
+			</div>
+			
+			
+		</div>
+
+	</div>
+<footer th:replace="layout/layout :: footer"></footer>
+
+
+</body>
+</html>

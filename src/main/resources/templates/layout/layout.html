@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:fragmen="head">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="tienda virtual">
+	<meta name="author" content="Christian , Jean">
+	
+	<title>Tienda De Ropa</title>
+	
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" th:href="@{/css/chosen.min.css}">
+	<link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+	<link rel="stylesheet" th:href="@{/css/solid.min.css}">
+	<link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}">
+	<link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+	<link rel="stylesheet" th:href="@{/css/slicknav.min.css}">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+ 
+    <header class="header-section" >
+        <div class="container-fluid">
+            <div class="inner-header">
+             
+                
+                
+                
+               <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Pandarius</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      
+					<li class="nav-item active"><a class="nav-link" th:href="@{/}"><i class="fas fa-home"></i> Home
+							<span class="sr-only">(current)</span>
+					</a></li>
+                    <li sec:authorize="hasRole('ROLE_EMPLOYEE')" class="nav-item"><a class="nav-link" th:href="@{/categoria}">
+						<i class="fas fa-clipboard-list"></i> Categoria
+					</a></li>
+					<li sec:authorize="hasRole('ROLE_EMPLOYEE')"  class="nav-item active"><a class="nav-link"
+						th:href="@{/usuario/}"><i class="fas fa-user-ninja"></i> Clientes
+					</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/producto}">
+						<i class="fas fa-tshirt"></i> Producto
+					</a></li>
+					
+					<li sec:authorize="hasRole('ROLE_EMPLOYEE')" class="nav-item"><a class="nav-link" th:href="@{/proveedor}">
+						<i class="fas fa-truck"></i> Proveedor
+					</a></li>
+					
+					<li sec:authorize="hasRole('ROLE_EMPLOYEE')" class="nav-item"><a class="nav-link" th:href="@{/ciudad}">
+						<i class="fas fa-city"></i> Distrito
+					</a></li>
+					<li sec:authorize="isAuthenticated()" class="nav-item"><a class="nav-link" th:href="@{/ventas/}">
+						<i class="fas fa-money-bill-wave"></i> Factura
+					</a></li>
+					<li sec:authorize="isAuthenticated()" class="nav-item"><a class="nav-link" th:href="@{/vender/}">
+						<i class="fas fa-cart-arrow-down"></i> Detalle
+					</a></li>
+					
+					<li sec:authorize="isAnonymous()" class="nav-item">
+						<a class="nav-link" th:href="@{/usuario/register}">
+						<i class="fas fa-user-ninja"></i> Register
+					</a></li>
+					<li sec:authorize="isAnonymous()" class="nav-item"><a class="nav-link" th:href="@{/login}">
+						<i class="fas fa-user-circle"></i> Sign In
+					</a></li>
+					<li sec:authorize="isAuthenticated()" class="nav-item">
+						<a class="nav-link" th:href="@{/logout}">
+						<i class="fas fa-sign-out-alt"></i> Sign Out
+					</a></li>
+					
+					
+					
+				</ul>
+  </div>
+</nav>
+               
+                
+            </div>
+        </div>
+    </header>
+   
+	</body>
+	<footer th:fragment="footer">
+		<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+		<script th:src="@{/js/chosen.jquery.min.js}"></script>
+		<script th:src="@{/js/fontawesome.min.js}"></script>		
+		<script th:src="@{/js/sweetalert.min.js}"></script>
+		<script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+		<script th:src="@{/js/jquery.slicknav.js}"></script>
+		<script th:src="@{/js/owl.carousel.min.js}"></script>
+		<script th:src="@{/js/jquery.nice-select.min.js}"></script>
+		<script th:src="@{/js/js/mixitup.min.js}"></script>
+		<script th:src="@{/js/main.js}"></script>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace = "layout/layout :: head"></head>
+<body>
+<header th:replace = "layout/layout :: header"></header>
+
+<!-- Header Info Begin -->
+    <div class="header-info">
+        <div class="container-fluid">
+            <div class="row">
+                
+                <div class="col-md-4 text-left text-lg-center">
+                    <div class="header-item">
+                        
+                        <h5>Bienvenido a la tienda virtual Pandarius 
+                        <strong><span sec:authorize="isAuthenticated()" 
+					th:text="${#authentication.getPrincipal().getNombres()}">
+						Juancito</span></strong></h5>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+   
+    
+
+
+    <!-- Hero Slider Begin -->
+    <section class="hero-slider">
+        <div class="hero-items owl-carousel">
+            <div class="single-slider-item set-bg" data-setbg="/images/tienda.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>2019</h1>
+                            <h2>Pandarius</h2>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-slider-item set-bg" data-setbg="/images/tienda1.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>2019</h1>
+                            <h2>Pandarius</h2>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-slider-item set-bg" data-setbg="/images/tienda2.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>2019</h1>
+                            <h2>Pandarius</h2>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<footer th:replace = "layout/layout :: footer"></footer>
+</body>
+</html>
